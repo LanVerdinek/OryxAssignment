@@ -1,0 +1,86 @@
+$create-edit-light-content: #e9e9e9;
+$create-edit-light-border: #d1d1d1;
+$create-edit-light-text: black;
+$create-edit-light-submit-button: gray;
+$create-edit-light-submit-button-text: white;
+
+$create-edit-dark-content: gray;
+$create-edit-dark-border: black;
+$create-edit-dark-text: white;
+$create-edit-dark-submit-button: #e9e9e9;
+$create-edit-dark-submit-button-text: black;
+
+$create-edit-text: 'create-edit-text';
+$create-edit-border-color: 'create-edit-border-color';
+$create-edit-content-color: 'create-edit-content-color';
+$create-edit-submit-button: 'create-edit-submit-button';
+$create-edit-submit-button-text: 'create-edit-submit-button-text';
+
+$themes: (
+    default: (
+        create-edit-text: $create-edit-light-text,
+        create-edit-border-color: $create-edit-light-border,
+        create-edit-content-color: $create-edit-light-content,
+        create-edit-submit-button: $create-edit-light-submit-button,
+        create-edit-submit-button-text: $create-edit-light-submit-button-text,
+    ),
+    dark: (
+        create-edit-text: $create-edit-dark-text,
+        create-edit-border-color: $create-edit-dark-border,
+        create-edit-content-color: $create-edit-dark-content,
+        create-edit-submit-button: $create-edit-dark-submit-button,
+        create-edit-submit-button-text: $create-edit-dark-submit-button-text
+    ),
+);
+
+.edit-create-section{
+    @include themed() {
+        background-color: theme_converter($create-edit-content-color);
+        border-color: theme_converter($create-edit-border-color);
+        color: theme_converter($create-edit-text);
+        }
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    margin-top: 30px;
+    width: 75%;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+}
+
+.edit-create-button{
+    @include themed() {
+        background-color: theme_converter($create-edit-submit-button);
+        color: theme_converter($create-edit-submit-button-text);
+        }
+
+
+    padding: 12px 24px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+ input[type=text], textarea {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    resize: none;
+  }
+  
+input[type=text]:focus, textarea:focus  {
+    border: 3px solid #555;
+    background-color: white;
+  }

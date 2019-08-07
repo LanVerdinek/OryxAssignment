@@ -1,0 +1,68 @@
+$settings-light-content: #e9e9e9;
+$settings-light-border: #d1d1d1;
+$settings-light-text: black;
+
+
+$settings-dark-content: gray;
+$settings-dark-border: black;
+$settings-dark-text: #F0F0F0;
+
+$settings-text: 'settings-text';
+$settings-border-color: 'settings-border-color';
+$settings-content-color: 'settings-content-color';
+
+$themes: (
+    default: (
+        settings-text: $settings-light-text,
+        settings-border-color: $settings-light-border,
+        settings-content-color: $settings-light-content,
+    ),
+    dark: (
+        settings-text: $settings-dark-text,
+        settings-border-color: $settings-dark-border,
+        settings-content-color: $settings-dark-content,
+    ),
+);
+
+
+.settings-section{
+    @include themed() {
+        background-color: theme_converter($settings-content-color);
+        border-color: theme_converter($settings-border-color);
+        color: theme_converter($settings-text);
+        }
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    margin-top: 30px;
+    width: 75%;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+}
+
+.dark-theme-button{
+    color: white;
+    background-color: #383838;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border: 1px solid white;
+}
+
+.light-theme-button{
+    color: #383838;
+    background-color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border: 1px solid #383838;
+}

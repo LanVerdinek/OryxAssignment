@@ -1,0 +1,31 @@
+$theme-map: null;
+
+*{
+    font-family: Nunito;
+}
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+      .theme--#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+@function theme_converter($key) {
+    @return map-get($theme-map, $key);
+}
+
+@import 'navigation_bar';
+@import 'main_page';
+@import 'about_page';
+@import 'settings_page';
+@import 'login_register_page';
+@import 'faq_page';
+@import 'create_edit_page';

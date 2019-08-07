@@ -1,0 +1,45 @@
+$welcome-light-content: #e9e9e9;
+$welcome-light-border: #d1d1d1;
+$welcome-light-text: black;
+
+$welcome-dark-content: gray;
+$welcome-dark-border: black;
+$welcome-dark-text: #F0F0F0;
+
+$welcome-text: 'welcome-text';
+$welcome-border-color: 'welcome-border-color';
+$welcome-content-color: 'welcome-content-color';
+
+$themes: (
+    default: (
+        welcome-text: $welcome-light-text,
+        welcome-border-color: $welcome-light-border,
+        welcome-content-color: $welcome-light-content,
+    ),
+    dark: (
+        welcome-text: $welcome-dark-text,
+        welcome-border-color: $welcome-dark-border,
+        welcome-content-color: $welcome-dark-content,
+    ),
+);
+
+
+.welcome-holder{
+    @include themed() {
+    background-color: theme_converter($welcome-content-color);
+    border-color: theme_converter($welcome-border-color);
+    color: theme_converter($welcome-text);
+    }
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    margin-top: 30px;
+    width: 75%;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+
+
+}
