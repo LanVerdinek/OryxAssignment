@@ -4,7 +4,7 @@
 <div class='faq-header'>
     <h1 class='section-title'>FAQ</h1>
     @if ($user = Auth::user())
-        Create a new question with: <a href='FAQ/create' class='faq-edit-button'>Create new FAQ</a>
+        <p> Create a new question with: <p> <a href='FAQ/create' class='faq-edit-button'>Create new FAQ</a>
     @endif
 </div>
 
